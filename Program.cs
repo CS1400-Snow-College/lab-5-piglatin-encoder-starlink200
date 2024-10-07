@@ -21,10 +21,22 @@ foreach(string word in phraseArray)
             int count = 0;
             foreach(char letter in word)
             {
-                if((letter.Equals('a') || letter.Equals('e') || letter.Equals('i') || letter.Equals('0') || letter.Equals('u')))
+                /*if((letter.Equals('a') || letter.Equals('e') || letter.Equals('i') || letter.Equals('0') || letter.Equals('u')))
                 {
                     pigLatinPhrase += word.Substring(count, word.Length - count) + word.Substring(0, count) + "ay ";
                     break;
+                }*/
+                switch(letter)
+                {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        pigLatinPhrase += word.Substring(count, word.Length - count) + word.Substring(0, count) + "ay ";
+                        break;
+                    default:
+                        break;
                 }
                 count++;
             }
@@ -33,6 +45,7 @@ foreach(string word in phraseArray)
 }
 Console.WriteLine(pigLatinPhrase);
 
+//using nested for each statement to shift each letter by a certain number
 string[] pigLatinArray = pigLatinPhrase.Split();
 string encryptedPhrase = "";
 foreach(string word in pigLatinArray)
