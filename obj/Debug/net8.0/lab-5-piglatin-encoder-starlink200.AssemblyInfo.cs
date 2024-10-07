@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("lab-5-piglatin-encoder-starlink200")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81e67f6675db7a3b1e3536bd7340a7394d7b8ffd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0c0199b6f3a41b105040f23d8009c190c0fae38")]
 [assembly: System.Reflection.AssemblyProductAttribute("lab-5-piglatin-encoder-starlink200")]
 [assembly: System.Reflection.AssemblyTitleAttribute("lab-5-piglatin-encoder-starlink200")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

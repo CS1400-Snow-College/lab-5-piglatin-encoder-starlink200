@@ -22,7 +22,7 @@ foreach(string word in phraseArray)
             int count = 0;
             foreach(char letter in word)
             {
-                /*if((letter.Equals('a') || letter.Equals('e') || letter.Equals('i') || letter.Equals('0') || letter.Equals('u')))
+                /*if((letter.Equals('a') || letter.Equals('e') || letter.Equals('i') || letter.Equals('0') || letter.Equals('u') | letter.Equals('y')))
                 {
                     pigLatinPhrase += word.Substring(count, word.Length - count) + word.Substring(0, count) + "ay ";
                     break;
@@ -34,6 +34,7 @@ foreach(string word in phraseArray)
                     case 'i':
                     case 'o':
                     case 'u':
+                    case 'y':
                         pigLatinPhrase += word.Substring(count, word.Length - count) + word.Substring(0, count) + "ay ";
                         break;
                     default:
