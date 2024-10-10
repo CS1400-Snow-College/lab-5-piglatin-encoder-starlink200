@@ -8,7 +8,7 @@ string[] phraseArray = userPhrase.Split();
 //for each statement to create the phrase in pig latin to later encrypt phrase
 string pigLatinPhrase = "";
 foreach(string word in phraseArray)
-{   
+{
     switch(word[0])
     {
         case 'a':
@@ -16,6 +16,7 @@ foreach(string word in phraseArray)
         case 'i':
         case 'o':
         case 'u':
+        case 'y':
             pigLatinPhrase += word + "way ";
             break;
         default:
@@ -35,7 +36,8 @@ foreach(string word in phraseArray)
                     case 'o':
                     case 'u':
                     case 'y':
-                        pigLatinPhrase += word.Substring(count, word.Length - count) + word.Substring(0, count) + "ay ";
+                        pigLatinPhrase += word.Substring(count - 1, word.Length - count) + word.Substring(0, count) + "ay ";
+                        Console.WriteLine(count);
                         break;
                     default:
                         break;
@@ -67,3 +69,5 @@ foreach(string word in pigLatinArray)
     encryptedPhrase += " ";
 }
 Console.WriteLine(encryptedPhrase);
+string practifce = "you are a piece of trash";
+Console.WriteLine(practifce.Substring(4, practifce.Length-4) + " " + practifce.Substring(0,4));
