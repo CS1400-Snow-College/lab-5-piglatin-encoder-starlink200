@@ -1,18 +1,28 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Random rand = new Random();
 Console.WriteLine("Hello! This program will allow the user to give a phrase, translate that to pig latin then encrypt it");
-Console.WriteLine("Please give a phrase.");
-string userPhrase = Console.ReadLine();
-string[] phraseArray = userPhrase.Split();
-bool numberFound = false;
+string userPhrase = "";
+string[] phraseArray = {""};
+bool numberFound = true;
+string pigLatinPhrase = "";
+while(numberFound)
+{
+    numberFound = false;
+    Console.WriteLine("Please give a phrase.");
+    userPhrase = Console.ReadLine();
+    phraseArray = userPhrase.Split();
+    for(int i = 0; i < userPhrase.Length; i++)
+    {
+        string letter = userPhrase.Substring(i,1);
+        numberFound = int.TryParse(letter, out int nums);
+        if(numberFound)
+        {
+            break;
+        }
+    }
+}
 
 //for each statement to create the phrase in pig latin to later encrypt phrase
-string pigLatinPhrase = "";
-for(int i = 0; i < userPhrase.Length - 1; i++)
-{
-    string letter = userPhrase.Substring(i,i+1);
-    numberFound = int.TryParse(letter, out int nums);
-}
 if(!numberFound)
 {
 
@@ -20,9 +30,9 @@ if(!numberFound)
     {
         switch(word[0])
         {
-            case 'a':
+            case 'a'or 'A':
             case 'e':
-            case 'i':
+            case 'i' or 'I':
             case 'o':
             case 'u':
             case 'y':
@@ -35,6 +45,10 @@ if(!numberFound)
                 {
                     switch(letter)
                     {
+                        case 'q':
+                            pigLatinPhrase += word.Substring(count + 2, word.Length - count - 2) + word.Substring(0, count + 2) + "ay ";
+                            leaveForEach = true;
+                            break;
                         case 'a':
                         case 'e':
                         case 'i':
