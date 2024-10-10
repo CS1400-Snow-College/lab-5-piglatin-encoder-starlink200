@@ -24,11 +24,6 @@ foreach(string word in phraseArray)
             bool leaveForEach = false;
             foreach(char letter in word)
             {
-                /*if((letter.Equals('a') || letter.Equals('e') || letter.Equals('i') || letter.Equals('0') || letter.Equals('u') | letter.Equals('y')))
-                {
-                    pigLatinPhrase += word.Substring(count, word.Length - count) + word.Substring(0, count) + "ay ";
-                    break;
-                }*/
                 switch(letter)
                 {
                     case 'a':
@@ -75,5 +70,3 @@ foreach(string word in pigLatinArray)
     encryptedPhrase += " ";
 }
 Console.WriteLine(encryptedPhrase);
-string practifce = "you are a piece of trash";
-Console.WriteLine(practifce.Substring(4, practifce.Length-4) + " " + practifce.Substring(0,4));
