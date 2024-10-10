@@ -21,6 +21,7 @@ foreach(string word in phraseArray)
             break;
         default:
             int count = 0;
+            bool leaveForEach = false;
             foreach(char letter in word)
             {
                 /*if((letter.Equals('a') || letter.Equals('e') || letter.Equals('i') || letter.Equals('0') || letter.Equals('u') | letter.Equals('y')))
@@ -36,11 +37,16 @@ foreach(string word in phraseArray)
                     case 'o':
                     case 'u':
                     case 'y':
-                        pigLatinPhrase += word.Substring(count - 1, word.Length - count) + word.Substring(0, count) + "ay ";
-                        Console.WriteLine(count);
+                        pigLatinPhrase += word.Substring(count, word.Length - count) + word.Substring(0, count) + "ay ";
+                        leaveForEach = true;
                         break;
                     default:
                         break;
+                }
+                //once the word is changed we want the foreach loop to stop
+                if(leaveForEach)
+                {
+                    break;
                 }
                 count++;
             }
